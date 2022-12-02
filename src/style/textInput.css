@@ -1,0 +1,19 @@
+.input-container {
+  border: solid 3px black;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.text-input {
+  font-size: 20px;
+  color: #130000;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: transparent;
+  outline: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 1px;
+}

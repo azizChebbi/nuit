@@ -1,38 +1,253 @@
-.App {
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ============ DESIGNING ICONS ============= */
+
+.virus-container,
+.arrow-container {
+  position: absolute;
+}
+
+.arrow-container {
+  top: 50%;
+  right: -190px;
+  transform: translateY(-50%);
+}
+
+.green-virus {
+  top: 100px;
+  right: 120px;
+  animation-duration: 6s;
+}
+.orange-virus {
+  bottom: 100px;
+  right: 100px;
+  animation-duration: 7s;
+}
+.pink-virus {
+  top: 100px;
+  left: 150px;
+  animation-duration: 5s;
+}
+.purple-virus {
+  bottom: 50px;
+  left: 30px;
+  animation-duration: 8s;
+}
+
+.virus {
+  width: 130px;
+  height: 150px;
+}
+.arrow {
+  width: 70px;
+  height: 80px;
+}
+
+/* ============ DESIGNING CARDS ============== */
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  transform: translate(-75px, -50px);
+}
+
+.card {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: solid 3px black;
+  padding: 30px 50px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gray {
+  background-color: #faf4e6;
+  /* z-index: 3; */
+}
+.orange {
+  background-color: #fda37f;
+  /* z-index: 2; */
+  /* transform: translate(25px, 25px); */
+}
+.purple {
+  background-color: #bfb9ff;
+  /* z-index: 1; */
+  /* transform: translate(50px, 50px); */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.first-card {
+  z-index: 3;
+}
+.second-card {
+  z-index: 2;
+  transform: translate(25px, 25px);
+}
+.third-card {
+  z-index: 1;
+  transform: translate(50px, 50px);
+}
+
+.input-container {
+  border: solid 3px black;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.text-input {
+  font-size: 20px;
+  color: #130000;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: transparent;
+  outline: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 1px;
+}
+
+/* ============== ANIMATION ================ */
+.green-virus,
+.orange-virus,
+.purple-virus,
+.pink-virus {
+  animation-name: green-arrow;
+  animation-iteration-count: infinite;
+}
+
+@keyframes green-arrow {
+  /* 0% {
+    transform: translate(0px, 0px);
+  }
+  10% {
+    transform: translate(10px, 5px);
+  }
+  20% {
+    transform: translate(5px, 0px);
+  }
+  30% {
+    transform: translate(0px, -5px);
+  }
+  40% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  60% {
+    transform: translate(0px, 0px);
+  }
+  70% {
+    transform: translate(0px, 0px);
+  }
+  80% {
+    transform: translate(0px, 0px);
+  }
+  90% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  } */
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.arrow {
+  animation-name: arrow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
+@keyframes arrow {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+/* ============= GRAY CARD =============== */
+.first-card-animation {
+  animation-name: first-card;
+  animation-duration: 2s;
+}
+
+@keyframes first-card {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  50% {
+    transform: translate(-200px, -50px) scale(0.5);
+  }
+
+  100% {
+    transform: translate(50px, 50px) scale(1);
+  }
+}
+
+/* ============= ORANGE CARD =============== */
+.second-card-animation {
+  animation-name: second-card;
+  animation-duration: 2s;
+}
+
+@keyframes second-card {
+  0% {
+    transform: translate(25px, 25px) scale(1);
+  }
+
+  50% {
+    transform: translate(400px, -30px) scale(0.5);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* ============= PURPLE CARD =============== */
+.third-card-animation {
+  animation-name: third-card;
+  animation-duration: 2s;
+}
+
+@keyframes third-card {
+  0% {
+    transform: translate(50px, 50px) scale(1);
+  }
+
+  50% {
+    transform: translate(150px, 250px) scale(0.5);
+  }
+
+  100% {
+    transform: translate(25px, 25px) scale(1);
   }
 }
